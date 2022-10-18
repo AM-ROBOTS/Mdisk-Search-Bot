@@ -25,6 +25,18 @@ Very Soon We will Update it With New Features.
 </p>
 </details>
 
+<details><summary>Deploy To VPS</summary>
+<p>
+<pre>
+git clone https://github.com/AM-ROBOTS/Mdisk-Search-Bot
+# Install Packages
+pip3 install -r requirements.txt
+Edit configs.py with variables as given below then run bot
+python3 main.py
+</pre>
+</p>
+</details>
+
 ## Support
 [![telegram badge](https://img.shields.io/badge/Telegram-Group-30302f?style=flat&logo=telegram)](https://telegram.dog/Official_Movies_Group)
 [![telegram badge](https://img.shields.io/badge/Telegram-Channel-30302f?style=flat&logo=telegram)](https://telegram.dog/MOVIES_ZILAA)
