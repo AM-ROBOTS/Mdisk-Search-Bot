@@ -10,7 +10,7 @@ import traceback
 
 import aiofiles
 import aiofiles.os
-from config import BOT_OWNER, BROADCAST_AS_COPY
+from config import Config
 from database import delete_user, get_all_users, total_users_count
 from pyrogram import Client, filters
 from pyrogram.errors import (FloodWait, InputUserDeactivated, PeerIdInvalid,
@@ -19,7 +19,7 @@ from pyrogram.types import Message
 
 broadcast_ids = {}
 
-@Client.on_message(filters.command("broadcast") & filters.private & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("broadcast") & filters.private & filters.user(Config))
 async def broadcast_handler(c:Client, m:Message):
     if m.reply_to_message:
         try:
