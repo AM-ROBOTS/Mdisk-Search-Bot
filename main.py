@@ -9,14 +9,11 @@ from TeamTeleRoid.forcesub import ForceSub
 import asyncio
 
 # Bot Client for Inline Search
-class Bot(Client):
-
-    def __init__(self):
-        super().__init__(
-        session_name=Config.BOT_SESSION_NAME,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        bot_token=Config.BOT_TOKEN
+Bot = Client(
+    session_name=Config.BOT_SESSION_NAME,
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN
 )
 
 # User Client for Searching in Channel.
