@@ -1,3 +1,4 @@
+# (c) @AM_ROBOTS
 
 from configs import Config
 from pyrogram import Client, filters, idle
@@ -5,6 +6,7 @@ from pyrogram.errors import QueryIdInvalid
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InlineQuery, InlineQueryResultArticle, \
     InputTextMessageContent
 from TeamTeleRoid.forcesub import ForceSub
+import asyncio
 
 # Bot Client for Inline Search
 Bot = Client(
@@ -21,18 +23,15 @@ User = Client(
     api_hash=Config.API_HASH
 )
 
-
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
-
-    await event.reply_text(Config.START_MSG.format(event.from_user.mention),
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Our Channel", url="https://t.me/MOVIES_ZILAA"),
-             InlineKeyboardButton("Our Group", url="https://t.me/Official_Movies_Group")],
-            [InlineKeyboardButton("Help", callback_data="Help_msg"),
-             InlineKeyboardButton("About", callback_data="About_msg")]
-        ])
-    )
+	await event.reply_photo("https://telegra.ph/file/165941ae764a56d6d9c89.jpg",
+                                caption=Config.START_MSG.format(event.from_user.mention),
+                                reply_markup=InlineKeyboardMarkup([
+                                    [InlineKeyboardButton("Our Channel", url="https://t.me/sources_cods"),
+                                     InlineKeyboardButton("Creator", url="https://t.me/Am_robots")],
+                                    [InlineKeyboardButton("Help", callback_data="Help_msg"),
+                                     InlineKeyboardButton("About", callback_data="About_msg")]]))
 
 @Bot.on_message(filters.private & filters.command("help"))
 async def help_handler(_, event: Message):
@@ -79,10 +78,10 @@ async def button(bot, cmd: CallbackQuery):
 				[
 					[
 						InlineKeyboardButton("Our Channel", url="https://t.me/MOVIES_ZILAA"),
-						InlineKeyboardButton("Our Group", url="https://t.me/Official_Movies_Group")
+						InlineKeyboardButton("Join", url="https://t.me/Official_Movies_Group")
 					],
 					[
-						InlineKeyboardButton("Developer", url="https://t.me/Am_RoBots"),
+						InlineKeyboardButton("Creator", url="https://t.me/Am_RoBots"),
 						InlineKeyboardButton("Home", callback_data="gohome")
 					]
 				]
