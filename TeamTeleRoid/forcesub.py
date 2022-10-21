@@ -1,4 +1,4 @@
-# (c) @Royalkrrishna
+# (c) @AM_ROBOTS
 
 import asyncio
 from configs import Config
@@ -13,7 +13,7 @@ async def ForceSub(bot: Client, cmd: Message):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.from_user.id,
-                text="You Are Ban To Use Me. Contact My Owner [ᎯℕUℛᎯᎶ](https://t.me/Am_RoBots).",
+                text="You Are Ban To Use Me. Contact My [ᎯℕUℛᎯᎶ](https://t.me/Am_RoBots).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -34,7 +34,7 @@ async def ForceSub(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🍿 Join Update Channel To Use Me...! 🍿", url=invite_link.invite_link)
+                        InlineKeyboardButton("🍿 Join Update Channel 🍿", url=invite_link.invite_link)
                     ],
                     [
                         InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshForceSub")
@@ -47,7 +47,7 @@ async def ForceSub(bot: Client, cmd: Message):
     except Exception:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="Somthing Went Wrong. Contact My Owner [ᎯℕUℛᎯᎶ](https://t.me/Am_RoBots).",
+            text="Somthing Went Wrong. Contact My [ᎯℕUℛᎯᎶ](https://t.me/Am_RoBots).",
             parse_mode="markdown",
             disable_web_page_preview=True
         )
