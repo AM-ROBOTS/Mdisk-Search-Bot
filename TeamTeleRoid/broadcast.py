@@ -19,7 +19,7 @@ from pyrogram.types import Message
 
 broadcast_ids = {}
 
-@Client.on_message(filters.command("broadcast") & filters.private & filters.user(ADMINS))
+@Client.on_message(filters.command("broadcast") & filters.private & filters.user(BOT_OWNER))
 async def broadcast_handler(c:Client, m:Message):
     if m.reply_to_message:
         try:
