@@ -5,3 +5,9 @@ aiofiles
 dnspython
 psutil
 sqlalchemy==1.3.23
+aiohttp==3.8.1
+pymongo[srv]==3.12.3
+bs4
+heroku3
+validators
+python-dotenv
