@@ -13,7 +13,16 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 
 broadcast_ids = {}
 
-
+@Client.on_message(filters.command("broadcast") & filters.private & filters.user(Config))
+async def broadcast_handler(c:Client, m:Message):
+    if m.reply_to_message:
+        try:
+            await main_broadcast_handler(m)
+        except Exception as e:
+            logging.error("Failed to broadcast", exc_info=True)
+    else:
+        await m.reply_text("Reply to the message you want to broadcast")
+        
 async def send_msg(user_id, message):
     try:
         if Config.BROADCAST_AS_COPY is False:
