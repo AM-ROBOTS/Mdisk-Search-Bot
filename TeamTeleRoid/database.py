@@ -1,4 +1,4 @@
-# (c) @KGN_OFFICIAL
+# (c) @AM_ROBOTS
 
 import datetime
 import motor.motor_asyncio
