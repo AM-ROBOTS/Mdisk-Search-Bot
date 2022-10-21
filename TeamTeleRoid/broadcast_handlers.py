@@ -1,4 +1,4 @@
-# (c) @RoyalKrrishna
+# (c) @AM_ROBOTS
 
 import time
 import string
